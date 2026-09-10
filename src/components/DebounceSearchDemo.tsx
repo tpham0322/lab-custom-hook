@@ -15,7 +15,7 @@ function DebounceSearchDemo() {
   }, [debouncedSearch]);
 
   return (
-    <div>
+    <section className="debounce-demo">
       <h2>Debounce Search Demo</h2>
 
       <input
@@ -25,18 +25,20 @@ function DebounceSearchDemo() {
         placeholder="Search..."
       />
 
-      <p>
-        Current input: {search}
-      </p>
+      <div className="search-info">
+        <p>
+          Current input: {search}
+        </p>
 
-      <p>
-        Debounced value: {debouncedSearch}
-      </p>
+        <p>
+          Debounced value: {debouncedSearch}
+        </p>
 
-      {search !== debouncedSearch && (
-        <p>Searching...</p>
-      )}
-    </div>
+        {search !== debouncedSearch && (
+          <p className="searching">Searching...</p>
+        )}
+      </div>
+    </section>
   );
 }
 

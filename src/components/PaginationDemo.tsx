@@ -23,30 +23,29 @@ function PaginationDemo() {
     initialPage: 1,
   });
 
-  const currentItems = items.slice(
-    startIndex,
-    endIndex + 1
-  );
+  const currentItems = items.slice(startIndex, endIndex + 1);
 
   return (
-    <div>
+    <section className="pagination-demo">
       <h2>Pagination Demo</h2>
 
-      <p>
-        Page {currentPage} of {totalPages}
-      </p>
+      <div className="pagination-info">
+        <p>
+          Page {currentPage} of {totalPages}
+        </p>
 
-      <p>
-        Showing {itemsOnCurrentPage} items
-      </p>
+        <p>
+          Showing {itemsOnCurrentPage} items
+        </p>
+      </div>
 
-      <ul>
+      <ul className="items">
         {currentItems.map((item) => (
           <li key={item}>{item}</li>
         ))}
       </ul>
 
-      <div>
+      <div className="pagination-controls">
         <button
           onClick={prevPage}
           disabled={!canPrevPage}
@@ -74,7 +73,7 @@ function PaginationDemo() {
           Next
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 
